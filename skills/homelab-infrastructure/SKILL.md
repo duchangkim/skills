@@ -12,7 +12,7 @@ description: "개인 홈랩(Proxmox VE 호스트, k3s VM, ArgoCD GitOps, Sealed 
 | Proxmox VE 호스트 | 하이퍼바이저, vzdump 백업     | SSH 별칭 `pve` (`root@192.168.0.100`), Web UI `:8006` | 직접 관리                        |
 | VM 100 `k3s-node` | 단일 노드 k3s 클러스터        | SSH 별칭 `homelab` (`192.168.0.43`)        | `duchangkim/home-lab` (GitOps)   |
 | 로컬 k3d          | 매니페스트 사전 검증          | `kubectl --context k3d-homelab`            | `duchangkim/home-lab` (`local` overlay) |
-| Cloudflare        | `duchi.click` DNS, Tunnel, Access | 대시보드                               | 직접 관리                        |
+| Cloudflare        | `duchi.click` DNS, Tunnel, Access | `cf` CLI(`cloudflare` 스킬), 대시보드  | 직접 관리                        |
 
 ---
 

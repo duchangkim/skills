@@ -34,10 +34,12 @@ npx skills update -g
 | 스킬                                                         | 설명                                                          |
 | ------------------------------------------------------------ | ------------------------------------------------------------- |
 | [homelab-infrastructure](skills/homelab-infrastructure/SKILL.md) | 홈랩(Proxmox, k3s, ArgoCD, Cloudflare)의 배포·진단·백업·복구 |
+| [cloudflare](skills/cloudflare/SKILL.md)                       | `cf` CLI로 Cloudflare 도메인·DNS·Workers 관리                 |
 
 ## 필수 준비 사항
 
 - Bitwarden CLI(`bw`)가 설치되어 있고 개인 계정으로 로그인한 뒤 `BW_SESSION` 환경변수가 설정되어 있어야 한다.
+- Cloudflare `cf` CLI(`npm install --global cf`)가 설치되어 있고 `duchangkim` 프로필로 인증되어 있어야 한다.
 
 ## 저장소 구조
 
