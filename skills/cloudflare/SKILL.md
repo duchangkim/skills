@@ -6,27 +6,17 @@ description: "개인 Cloudflare 계정(`duchi.click` 도메인·DNS·Workers 등
 # Cloudflare
 
 개인 도메인, DNS, 서버리스 인프라는 Cloudflare로 운영한다.
-Cloudflare 관리는 `cf` CLI를 사용하며, `duchangkim` Auth 프로필을 사용해야 한다.
+Cloudflare 관리는 `cf` CLI를 사용하며, 모든 `cf` 명령에 `--profile duchangkim`을 명시한다. `cf auth activate`로 디렉터리에 바인딩하지 않는다.
 
 `cf`가 없으면 `npm install --global cf`로 설치한다(Node.js 22.18 이상, Bun 미지원).
 
-작업 전 반드시 다음처럼 `duchangkim` 프로필인지를 점검한다.
+작업 전 반드시 다음처럼 `duchangkim` 프로필의 인증 상태를 점검한다. `authenticated`와 `tokenValid`가 `true`여야 한다.
 
 ```bash
-cf auth whoami
+cf auth whoami --profile duchangkim
 ```
 
-프로필이 다른 경우 `duchangkim`의 존재를 점검하고 활성화한 후 이어서 진행한다. `activate`는 현재 디렉터리에 프로필을 바인딩한다.
-
-```bash
-# 인증된 Auth 프로필 목록 확인
-cf auth list
-
-# duchangkim Auth 프로필 활성화
-cf auth activate duchangkim
-```
-
-`duchangkim` Auth 프로필이 없거나 인증이 만료된 경우, 작업을 중단하고 사용자에게 다음 인증 절차를 안내한다. 로그인은 사용자만 진행한다.
+`duchangkim` Auth 프로필이 없거나(`cf auth list`로 확인) 인증이 만료된 경우, 작업을 중단하고 사용자에게 다음 인증 절차를 안내한다. 로그인은 사용자만 진행한다.
 
 ```bash
 # Auth 프로필 생성 및 로그인
